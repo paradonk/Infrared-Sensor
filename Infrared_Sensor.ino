@@ -12,9 +12,9 @@ int val    = 0;              // variable for reading the pin status
 void setup() 
 {
   Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);     // declare LED as output
-  pinMode(irPin,  INPUT);     // declare sensor as input
-  pinMode(outPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);    // declare LED as output
+  pinMode(irPin, INPUT);      // declare sensor as input
+  pinMode(outPin, OUTPUT);    // declare output to relay module
 }
 
 void loop()
@@ -29,7 +29,7 @@ void loop()
       Serial.print("Power ON!  Status: ");
       Serial.println(state);
       digitalWrite(outPin,state);
-      delay (5000);
+      delay (5000);  // wait 5 sec before next process
     }
   }
   else
@@ -37,13 +37,13 @@ void loop()
     val = digitalRead(irPin);
     if (val == LOW)
     {
-      delay (5000);
+      delay (5000);  // waiting 5 sec after walking passed sensor then switch off the light
       digitalWrite(ledPin,LOW);
       state = digitalRead(ledPin);
       Serial.print("Power OFF! Status: ");
       Serial.println(state);
       digitalWrite(outPin,state);
-      delay (5000);
+      delay (5000);  // wait 5 sec before next process
     }
   }
 }
