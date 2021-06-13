@@ -4,9 +4,9 @@
  */
 
 int ledPin = LED_BUILTIN;    // choose the pin for the LED_BUILTIN ; please manage as per your board
-int irPin  = 7;              // choose the input pin (for PIR sensor)
-int outPin = 12;             // Pinout to Relay Module ; you can cange as you want
-int state  = LOW;            // Status of Infrared Pin
+int irPin  = 7;              // choose the input pin (for IR sensor)
+int outPin = 12;             // Pinout to Relay Module ; you can change as you want
+int state  = LOW;            // Status of IR Pin
 int val    = 0;              // variable for reading the pin status
 
 void setup() 
