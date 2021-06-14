@@ -1,6 +1,7 @@
 /*  This code work with IR sensor and relay module for turn on/off light
  *  By walking passed the sensor the light will turn on immediately then waiting for 5 sec for the next process
  *  For second passed ,the light will turn off after 5 sec.
+ *  Please adjust IR sensor to suitable distance.
  */
 
 int ledPin = LED_BUILTIN;    // choose the pin for the LED_BUILTIN ; please manage as per your board
